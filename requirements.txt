@@ -1,0 +1,4 @@
+python-telegram-bot[job-queue]==21.10
+ollama>=0.4.7
+aiohttp>=3.9.0
+duckduckgo-search>=7.0.0
