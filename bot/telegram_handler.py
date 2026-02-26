@@ -5,6 +5,7 @@ Routes messages through Elysia's brain and handles commands.
 import asyncio
 import logging
 from datetime import datetime
+import pytz
 
 from telegram import Update, BotCommand
 from telegram.ext import (
@@ -253,6 +254,10 @@ class TelegramHandler:
             .post_init(self.post_init)
             .build()
         )
+
+        # Set timezone to Jakarta for scheduled jobs
+        jakarta_tz = pytz.timezone('Asia/Jakarta')
+        self.app.job_queue.scheduler.timezone = jakarta_tz
 
         # Register handlers
         self.app.add_handler(CommandHandler("start", self.cmd_start))

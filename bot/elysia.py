@@ -6,7 +6,7 @@ Uses Ollama Cloud API with gpt-oss:120b-cloud model.
 import json
 import logging
 import re
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from typing import List, Dict, Optional, Tuple
 
 from ollama import AsyncClient
@@ -128,7 +128,8 @@ class ElysiaBrain:
 
     def _build_context(self) -> str:
         """Build dynamic context string with current state."""
-        now = datetime.now()
+        jakarta_tz = timezone(timedelta(hours=7))
+        now = datetime.now(jakarta_tz)
         parts = []
 
         # Current time context

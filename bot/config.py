@@ -2,8 +2,13 @@
 Configuration module - loads all settings from environment variables.
 """
 import os
+from pathlib import Path
+from dotenv import load_dotenv
 from dataclasses import dataclass, field
 from typing import Optional
+
+# Load .env file
+load_dotenv()
 
 
 @dataclass
