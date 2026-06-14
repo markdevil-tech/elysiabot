@@ -1,0 +1,16 @@
+name: Ping Kimi Proxy Daily
+
+on:
+  schedule:
+    # Berjalan otomatis setiap hari pada pukul 00:00 UTC (07:00 WIB)
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Mengaktifkan tombol untuk menjalankan secara manual di GitHub
+
+jobs:
+  ping-url:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Kirim Permintaan ke URL
+      run: |
+        curl -i https://markdevilyt-kimiproxy.hf.space
