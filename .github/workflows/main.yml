@@ -14,7 +14,7 @@ jobs:
       - name: Ping Space
         run: |
           # Melakukan ping ke URL Space Anda
-          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://markdevilyt-elyyiabot.hf.space)
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://markdevilyt-kimiproxy.hf.space)
           echo "Status Code: $HTTP_STATUS"
           if [ "$HTTP_STATUS" -eq 200 ] || [ "$HTTP_STATUS" -eq 405 ]; then
             echo "Ping berhasil! Space tetap bangun."
